@@ -40,7 +40,7 @@ func requestAccess(_ arguments: [String]) {
     
     // NOTE: 30分後
     var interval = "1800"
-    if !arguments[2].isEmpty {
+    if arguments.count > 2 {
         interval = arguments[2]
         print("time is \(interval) sec")
     } else {
