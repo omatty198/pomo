@@ -7,8 +7,11 @@ alias pomo='~/src/github.com/USERNAME/NewPomo/pomo $1 $2'
 $1: title
 $2: seconds
 
-ex) pomo テストコード書く 1800
-// 30分後にリマインドされる
+ex) 
+pomo テストコード書く 1800;
+reward コーラ飲む
+
+// 30分後にリマインドされる かつ 餌も通知される
 ```
 
 # More
@@ -33,6 +36,11 @@ function start () {
   fi
   echo "sleeping...";
   toggl stop;
+}
+
+function reward () {
+  local reward_name=$1;
+  fastlane run notification message:$reward_name
 }
 ```
 
